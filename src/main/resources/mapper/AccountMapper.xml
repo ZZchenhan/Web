@@ -1,0 +1,11 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ch.dao.AccountDao">
+    <insert id="insertAccount">
+      INSERT INTO account(user_name,psw,email,mobile) VALUES(#{userName},#{psw},#{email},#{mobile})
+    </insert>
+    <select id="selectByName"  resultType="com.ch.entity.AccountEntity" parameterType="String">
+      SELECT  * FROM  account WHERE  user_name = #{name}
+    </select>
+</mapper>
